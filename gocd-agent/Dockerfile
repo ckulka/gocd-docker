@@ -6,16 +6,16 @@ MAINTAINER CKulka
 
 ## BEGIN INSTALLATION
 
-# Install SVN
-RUN apt-get update && apt-get install -y -q subversion
-
 # Install Java 8 JDK, Remove Java 7 JRE
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-RUN apt-add-repository -y ppa:webupd8team/java && apt-get install -y -q oracle-java8-installer
+RUN apt-add-repository -y ppa:webupd8team/java && apt-get update && apt-get install -y -q oracle-java8-installer
 RUN update-java-alternatives -s java-8-oracle && apt-get install -y oracle-java8-set-default
 RUN apt-get remove -y -q openjdk-7-jre-headless
-RUN sed -i '/JAVA_HOME/c\JAVA_HOME="/usr/bin/java"' go-agent
+RUN sed -i '/JAVA_HOME/c\JAVA_HOME="/usr/lib/jvm/java-8-oracle"' /etc/default/go-agent
+
+# Install SVN
+RUN apt-get install -y -q subversion
 
 # Install Maven3
 RUN curl http://mirror.nexcess.net/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz | tar -xz -C /usr/share
