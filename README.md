@@ -21,7 +21,7 @@ docker build -t ckulka/gocd-agent gocd-agent
 
 #### Run GoCD Server & Agents
 
-Note that both ```docker run``` commands are both running in the foreground, due to the conflicting -d and --rm flags.
+Note that both ```docker run``` commands are both running in the foreground, due to the conflicting ```-d``` and ```--rm``` flags.
 
 ```
 # Create GoCD Server volume container with the name “go-server-data”
