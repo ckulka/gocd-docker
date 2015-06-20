@@ -13,8 +13,9 @@ GoCD Agent based on gocd/gocd-agent (https://github.com/gocd/gocd-docker)
 #### Build Docker Images
 
 ```
-docker build -t ckulka/gocd-server -f Dockerfile.gocd-server .
-docker build -t ckulka/gocd-agent -f Dockerfile.gocd-agent .
+# Shell working directory is where this README.md is
+docker build -t ckulka/gocd-server gocd-server
+docker build -t ckulka/gocd-agent gocd-agent
 ```
 
 
