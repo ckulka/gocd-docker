@@ -1,5 +1,5 @@
 # Set the base image to gocd/gocd-server
-FROM gocd/gocd-server
+FROM gocd/gocd-server:15.1.0
 
 # File Author / Maintainer
 MAINTAINER CKulka
@@ -10,8 +10,8 @@ MAINTAINER CKulka
 # Remove 30s delay
 ENV MSG_TIME 0
 
-# Install SVN
-RUN apt-get update && apt-get install -y -q subversion
+# Install SVN and mercurial
+RUN apt-get update && apt-get install -y -q subversion mercurial
 
 
 ## IMAGE CLEANUP
