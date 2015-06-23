@@ -1,12 +1,12 @@
 #### Dockerfiles
 
 GoCD Server based on gocd/gocd-server (https://github.com/gocd/gocd-docker)
- - Added subversion
+ - Added subversion & mercurial
 
 GoCD Agent based on gocd/gocd-agent (https://github.com/gocd/gocd-docker)
 
 - Replaced Java 7 JRE with Java 8 JDK
-- Added subversion
+- Added subversion & mercurial
 - Added Maven 3
 
 
