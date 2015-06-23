@@ -21,7 +21,7 @@ docker build -t ckulka/gocd-agent gocd-agent
 
 #### Run GoCD Server & Agents
 
-There are two ways to run the GoCD server and agents: using the service scripts and the manual way.
+There are two ways to run the GoCD server: using the service scripts and the manual way.
 
 
 ##### Service Script
@@ -30,11 +30,11 @@ The service script's intended use is for /etc/init.d and provides the usual comm
 
 ```
 # Shell working directory is where this README.md is
-gocd-server/gocd-server.sh {start | stop | restart | status}
-gocd-agent/gocd-agent.sh {start | stop | restart | status}
+gocd-server/gocd-server.sh start
+gocd-server/gocd-server.sh status
+gocd-server/gocd-server.sh restart
+gocd-server/gocd-server.sh stop
 ```
-
-The ```gocd-agent.sh``` script assumes, that the GoCD Server is running on the same host and that its ports are exposed.
 
 
 ##### The Manual Way
