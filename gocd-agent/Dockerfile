@@ -1,5 +1,5 @@
 # Set the base image to gocd/gocd-server
-FROM gocd/gocd-agent
+FROM gocd/gocd-agent:15.1.0
 
 # File Author / Maintainer
 MAINTAINER CKulka
@@ -15,13 +15,12 @@ RUN apt-get remove -y -q openjdk-7-jre-headless
 RUN sed -i '/JAVA_HOME/c\JAVA_HOME="/usr/lib/jvm/java-8-oracle"' /etc/default/go-agent
 
 # Install SVN
-RUN apt-get install -y -q subversion
+RUN apt-get install -y -q subversion mercurial
 
 # Install Maven3
 ENV mavenVersion 3.3.3
 RUN curl http://mirror.nexcess.net/apache/maven/maven-3/${mavenVersion}/binaries/apache-maven-${mavenVersion}-bin.tar.gz | tar -xz -C /usr/share
 RUN ln -s /usr/share/apache-maven-${mavenVersion}/bin/mvn /usr/bin/mvn
-RUN curl -o /usr/share/apache-maven-${mavenVersion}/conf/settings.xml http://pbwebtest01.wlgore.com:9010/download/attachments/2523305/settings.xml
 
 
 ## IMAGE CLEANUP
