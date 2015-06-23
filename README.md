@@ -21,7 +21,25 @@ docker build -t ckulka/gocd-agent gocd-agent
 
 #### Run GoCD Server & Agents
 
-Note that both ```docker run``` commands are both running in the foreground, due to the conflicting ```-d``` and ```--rm``` flags.
+There are two ways to run the GoCD server: using the service scripts and the manual way.
+
+
+##### Service Script
+
+The service script's intended use is for /etc/init.d and provides the usual commands:
+
+```
+# Shell working directory is where this README.md is
+gocd-server/gocd-server.sh start
+gocd-server/gocd-server.sh status
+gocd-server/gocd-server.sh restart
+gocd-server/gocd-server.sh stop
+```
+
+
+##### The Manual Way
+
+Note that both ```docker run``` commands are running in the foreground, due to the conflicting ```-d``` and ```--rm``` flags.
 
 ```
 # Create GoCD Server volume container with the name “go-server-data”
