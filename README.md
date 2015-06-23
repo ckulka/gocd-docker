@@ -51,12 +51,12 @@ The ```gocd-agent.sh``` script assumes, that the GoCD Server is running on the s
 Note that both ```docker run``` commands are running in the foreground, due to the conflicting ```-d``` and ```--rm``` flags.
 
 ```
-# Create GoCD Server volume container with the name “go-server-data”
+# Create GoCD Server volume container with the name “gocd-server-data”
 docker create --name gocd-server-data ckulka/gocd-server /bin/true
 
-# Create GoCD Server container with the name “go-server”
+# Create GoCD Server container with the name “gocd-server”
 docker run -p 8153:8153 --rm --name gocd-server --volumes-from go-server-data ckulka/gocd-server
 
-# Create GoCD Agent container linked to our "go-server"
+# Create GoCD Agent container linked to our "gocd-server"
 docker run -link gocd-server:go-server --rm ckulka/gocd-agent
 ```
