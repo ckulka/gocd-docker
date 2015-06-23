@@ -1,5 +1,5 @@
 # Set the base image to gocd/gocd-server
-FROM gocd/gocd-agent:15.1.0
+FROM gocd/gocd-agent:latest
 
 # File Author / Maintainer
 MAINTAINER CKulka

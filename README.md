@@ -1,14 +1,23 @@
-#### Dockerfiles
 
-GoCD Server based on gocd/gocd-server (https://github.com/gocd/gocd-docker)
+### Supported Tags
+
+I follow the same naming scheme for the images as [gocd](https://registry.hub.docker.com/u/gocd/gocd-server/) themselves:
+ - latest (corresponds to 15.1.0)
+ - 15.1.0
+
+
+###  Image Details
+
+GoCD Server based on [gocd/gocd-server](https://registry.hub.docker.com/u/gocd/gocd-server/)
  - Added subversion & mercurial
 
-GoCD Agent based on gocd/gocd-agent (https://github.com/gocd/gocd-docker)
+GoCD Agent based on [gocd/gocd-agent](https://registry.hub.docker.com/u/gocd/gocd-agent/)
+ - Replaced Java 7 JRE with Java 8 JDK
+ - Added subversion & mercurial
+ - Added Maven 3
 
-- Replaced Java 7 JRE with Java 8 JDK
-- Added subversion & mercurial
-- Added Maven 3
 
+### Usage
 
 #### Build Docker Images
 
