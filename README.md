@@ -43,11 +43,11 @@ Note that both ```docker run``` commands are running in the foreground, due to t
 
 ```
 # Create GoCD Server volume container with the name “go-server-data”
-docker create --name go-server-data ckulka/gocd-server /bin/true
+docker create --name gocd-server-data ckulka/gocd-server /bin/true
 
 # Create GoCD Server container with the name “go-server”
-docker run -p 8153:8153 --rm --name go-server --volumes-from go-server-data ckulka/gocd-server
+docker run -p 8153:8153 --rm --name gocd-server --volumes-from go-server-data ckulka/gocd-server
 
 # Create GoCD Agent container linked to our "go-server"
-docker run -link go-server:go-server --rm ckulka/gocd-agent
+docker run -link gocd-server:go-server --rm ckulka/gocd-agent
 ```

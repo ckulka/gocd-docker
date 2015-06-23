@@ -19,7 +19,7 @@ NAME="gocd-server"
 DATA_NAME="$NAME-data"
 
 # Add your exposed GoCD Server ports here
-PORTS="-p 8153:8153"
+PORTS="-p 8153:8153 -p 8154:8154"
 
 # Add your host mounts here if you want to - for whatever reason - mount directories from your host system instead of the data volume container.
 VOLUMES=""
